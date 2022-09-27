@@ -1,16 +1,10 @@
-# fuction that sorts it alphabetically
-# def sortAlphabetic(listName:list) -> list:
-#     stringAsciiLowerCase=''.join(chr(i) for i in range(97,123))
-#     for i in listName:
-#         if i in stringAsciiLowerCase:
-#             a=stringAsciiLowerCase.index(i)
 
-def quicksort(lst):
-    if not lst:
+from typing import List
+def quicksort(arr: List) -> List:
+    if not arr:
         return []
-    return (quicksort([x for x in lst[1:] if x <  lst[0]])
-            [lst[0]] +
-            quicksort([x for x in lst[1:] if x >= lst[0]]))
-lst = ['b', 'd', 'a', 'e', 'c',]
-a=[x for x in lst[1:] if x <  lst[0]]
-print(a)
+    return (quicksort([x for x in arr[1:] if x <  arr[0]])
+            + [arr[0]] +
+            quicksort([x for x in arr[1:] if x >= arr[0]]))
+
+print(quicksort(['c','ad','as','y','p']))
